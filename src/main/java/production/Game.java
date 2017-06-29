@@ -3,6 +3,7 @@ package production;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Game {
@@ -11,16 +12,20 @@ public class Game {
 	@GeneratedValue
 	private long id;
 	
+	@ManyToOne
+	public Genre genre ;
+	
 	private String title;
-	private String genre;
+	
 	
 	private Game() {
 		
 	}
 	
-	public Game(String title, String genre) {
+	public Game(String title, Genre genre) {
 		this.title = title;
 		this.genre = genre;
+		
 	}
 
 	public long getId() {
