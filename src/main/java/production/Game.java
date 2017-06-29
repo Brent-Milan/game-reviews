@@ -1,6 +1,7 @@
 package production;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Game {
@@ -14,6 +15,11 @@ public class Game {
 	
 	private Game() {
 		
+	}
+	
+	public Game(String title, String genre) {
+		this.title = title;
+		this.genre = genre;
 	}
 
 	public long getId() {
